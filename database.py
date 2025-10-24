@@ -14,23 +14,23 @@ def create_table():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             user_id TEXT NOT NULL,
             task_name TEXT NOT NULL,
-            due_time TEXT NOT NULL,
+            reminder TEXT NOT NULL,
             created_at TEXT NOT NULL
         )
         """)
         conn.commit()
 
-def add_task(user_id, task_name, due_time):
+def add_task(user_id, task_name, reminder):
     with connect() as conn:
         c = conn.cursor()
-        c.execute("INSERT INTO tasks (user_id, task_name, due_time, created_at) VALUES (?, ?, ?, ?)",
-                  (user_id, task_name, due_time, datetime.utcnow().isoformat()))
+        c.execute("INSERT INTO tasks (user_id, task_name, reminder, created_at) VALUES (?, ?, ?, ?)",
+                  (user_id, task_name, reminder, datetime.utcnow().isoformat()))
         conn.commit()
 
 def get_tasks(user_id):
     with connect() as conn:
         c = conn.cursor()
-        c.execute("SELECT id, task_name, due_time FROM tasks WHERE user_id = ?", (user_id,))
+        c.execute("SELECT id, task_name, reminder FROM tasks WHERE user_id = ?", (user_id,))
         return c.fetchall()
 
 def remove_task(task_id, user_id):
