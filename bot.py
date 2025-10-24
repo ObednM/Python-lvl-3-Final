@@ -18,9 +18,9 @@ async def on_ready():
 async def addtask(ctx, *, args):
     try:
         name, date_str = args.split(",", 1)
-        due_time = date_str.strip()
-        database.add_task(str(ctx.author.id), name.strip(), due_time)
-        await ctx.send(f"Tugas **{name.strip()}** ditambahkan! deadline: `{due_time}`")
+        reminder = date_str.strip()
+        database.add_task(str(ctx.author.id), name.strip(), reminder)
+        await ctx.send(f"Tugas **{name.strip()}** ditambahkan! deadline: `{reminder}`")
     except ValueError:
         await ctx.send("Format salah! Gunakan: `!addtask Nama tugas, YYYY-MM-DD HH:MM`")
 
