@@ -4,8 +4,9 @@ Schedule Buddy
 
 -- Commands
 -!addtask
-adds a task to your database and reminds you when the time is right
+adds a task to your database and reminds you of said task
 -!tasks
 shows all of your scheduled tasks
 -!removetask
 removes a specified task
+
