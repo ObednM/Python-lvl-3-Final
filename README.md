@@ -12,7 +12,7 @@ Adds a new task to your schedule
 Shows your scheduled tasks with interactive buttons
 
 ### !removetask
-removes a specified task (!removetask <number>)
+removes a specified task (!removetask "number")
 
 ### !edittask
 Edit a task's name or scheduled reminder.
@@ -21,3 +21,4 @@ Edit a task's name or scheduled reminder.
 
 ### !cleartasks
 Removes all your tasks
+
