@@ -1,18 +1,23 @@
-Schedule Buddy
+# Schedule Buddy
 
-- Discord bot that keeps track and reminds you of your tasks and schedule 
+A Discord bot that keeps track and reminds you of your tasks and schedule 
 
--- Commands
+## Commands
 
--!addtask "task name" "YYYY-MM-DD" "HH:MM"
-adds a task to your database and reminds you of said task
+### !addtask
+Adds a new task to your schedule
+(!addtask "Task Name" YYYY-MM-DD HH:MM)
 
--!tasks
-shows all of your scheduled tasks
+### !tasks
+Shows your scheduled tasks with interactive buttons
 
--!removetask 
-removes a specified task
+### !removetask
+removes a specified task (!removetask <number>)
 
--!cleartasks
-removes every task
+### !edittask
+Edit a task's name or scheduled reminder.
+(!edittask <task_id> name New task name)
+(!edittask <task_id> reminder YYYY-MM-DD HH:MM)
 
+### !cleartasks
+Removes all your tasks
